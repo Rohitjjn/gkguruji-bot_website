@@ -405,7 +405,7 @@ const App: React.FC = () => {
          <div className="container mx-auto px-6 md:px-12 text-center mb-16"><h2 className="text-3xl md:text-5xl font-serif font-bold text-midnight-950 mb-4">Premium Membership</h2></div>
          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
             {t.pricing.plans.map((plan, idx) => (
-              <div key={idx} className={`relative rounded-[2rem] p-8 transition-all border overflow-hidden ${plan.id === 'basic' ? 'bg-gradient-to-br from-yellow-50 to-red-100 border-yellow-300 text-slate-800' : plan.id === 'pro' ? 'bg-gradient-to-br from-red-600 to-sky-700 text-white shadow-2xl scale-105 border-black-400' : 'bg-white border-slate-200 text-slate-800'}`}>
+              <div key={idx} className={`relative rounded-[2rem] p-8 transition-all border overflow-hidden ${plan.id === 'basic' ? 'bg-gradient-to-br from-yellow-50 to-red-100 border-yellow-300 text-slate-800' : plan.id === 'pro' ? 'bg-gradient-to-br from-red-600 to-ref-700 text-white shadow-2xl scale-105 border-blue-400' : 'bg-white border-slate-200 text-slate-800'}`}>
                 {plan.recommended && (
                   <div className="absolute top-0 right-0 px-5 py-1.5 rounded-bl-2xl text-[10px] font-bold uppercase tracking-widest bg-sky text-white-400 shadow-lg">Most Popular</div>
                 )}
