@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Gk Guruji Bot - Best Rajasthan GK Quiz Telegram Bot</title>
+    <meta name="description" content="Start Gk Guruji Bot on Telegram for Rajasthan GK Previous Year Questions. Best Quiz Bot for RPSC, RSMSSB, CET, REET, and Patwar exams. Join now for free daily quizzes." />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gk Guruji Bot - Best Rajasthan GK Quiz Telegram Bot" />
+    <meta property="og:description" content="Start Gk Guruji Bot on Telegram for Rajasthan GK Previous Year Questions. Best Quiz Bot for RPSC, RSMSSB, CET, REET, and Patwar exams." />
+    <meta property="og:image" content="/logo.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="Gk Guruji Bot - Best Rajasthan GK Quiz Telegram Bot" />
+    <meta property="twitter:description" content="Start Gk Guruji Bot on Telegram for Rajasthan GK Previous Year Questions. Best Quiz Bot for RPSC, RSMSSB, CET, REET, and Patwar exams." />
+    <meta property="twitter:image" content="/logo.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              midnight: {
+                800: '#1e293b',
+                900: '#0f172a',
+                950: '#020617',
+              },
+              gold: {
+                200: '#fae8b0',
+                300: '#fcd34d',
+                400: '#fbbf24',
+                500: '#f59e0b',
+                600: '#d97706',
+                700: '#b45309',
+              }
+            },
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+              serif: ['"Playfair Display"', 'serif'],
+            },
+            backgroundImage: {
+              'luxury-gradient': 'linear-gradient(to bottom, #020617, #0f172a)',
+              'gold-gradient': 'linear-gradient(135deg, #fcd34d 0%, #d97706 100%)',
+              'gold-text': 'linear-gradient(to right, #fcd34d, #f59e0b, #d97706)',
+              'card-sheen': 'linear-gradient(45deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.05) 100%)',
+            },
+            boxShadow: {
+              'glow-gold': '0 0 30px -5px rgba(245, 158, 11, 0.3)',
+              'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.1)',
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #f8fafc;
+        color: #0f172a;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .bg-noise {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        pointer-events: none; z-index: 0; opacity: 0.03;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      }
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 10px; }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "lucide-react": "https://esm.sh/lucide-react@0.463.0",
+    "framer-motion": "https://esm.sh/framer-motion@11.11.17",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body class="antialiased overflow-x-hidden selection:bg-gold-500 selection:text-white pb-32 md:pb-0">
+    <div class="bg-noise"></div>
+    <div id="root" class="relative z-10"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
