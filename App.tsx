@@ -409,10 +409,10 @@ const App: React.FC = () => {
             {t.pricing.plans.map((plan, idx) => (
               <div key={idx} className={`relative rounded-[2rem] p-8 transition-all border overflow-hidden ${plan.id === 'basic' ? 'bg-gradient-to-br from-yellow-50 to-yellow-100 border-pink-300 text-slate-800' : plan.id === 'pro' ? 'bg-gradient-to-br from-red-600 to-red-700 text-white shadow-2xl scale-105 border-red-400' : 'bg-white border-slate-200 text-slate-800'}`}>
                 {plan.recommended && (
-                  <div className="absolute top-0 right-0 px-5 py-1.5 rounded-bl-2xl text-[10px] font-bold uppercase tracking-widest bg-black text-emerald-400 shadow-lg">Most Popular</div>
+                  <div className="absolute top-0 right-0 px-5 py-1.5 rounded-bl-2xl text-[10px] font-bold uppercase tracking-widest bg-black text-red-400 shadow-lg">Most Popular</div>
                 )}
                 {!plan.recommended && plan.badge && (
-                  <div className="absolute top-0 right-0 px-5 py-1.5 rounded-bl-2xl text-[10px] font-bold uppercase tracking-widest bg-gradient-to-r from-blue-500 to-indigo-600 text-white shadow-lg">{plan.badge}</div>
+                  <div className="absolute top-0 right-0 px-5 py-1.5 rounded-bl-2xl text-[10px] font-bold uppercase tracking-widest bg-gradient-to-r from-pink-500 to-pink-600 text-white shadow-lg">{plan.badge}</div>
                 )}
                 <h3 className={`text-lg font-bold mb-2 ${plan.recommended ? 'text-white' : plan.id === 'basic' ? 'text-amber-600' : 'text-slate-400'}`}>{plan.name}</h3>
                 <div className="flex items-baseline gap-1 mb-8"><span className="text-5xl font-serif font-bold">{plan.price}</span><span className="text-sm opacity-70">{plan.priceSub}</span></div>
