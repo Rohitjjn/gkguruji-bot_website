@@ -401,32 +401,90 @@ const App: React.FC = () => {
         </div>
       </section>
 
-      <section id="pricing" className="py-24 bg-white">
-         <div className="container mx-auto px-6 md:px-12 text-center mb-16"><h2 className="text-3xl md:text-5xl font-serif font-bold text-midnight-950 mb-4">Premium Membership</h2></div>
-         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
-            {t.pricing.plans.map((plan, idx) => (
-              <div key={idx} className={`relative rounded-[2rem] p-8 transition-all border overflow-hidden ${plan.id === 'basic' ? 'bg-gradient-to-br from-yellow-50 to-red-100 border-yellow-300 text-slate-800' : plan.id === 'pro' ? 'bg-gradient-to-br from-red-600 to-red-700 text-white shadow-2xl scale-105 border-red-400' : 'bg-white border-slate-200 text-slate-800'}`}>
-                {plan.recommended && (
-                  <div className="absolute top-0 right-0 px-5 py-1.5 rounded-bl-2xl text-[10px] font-bold uppercase tracking-widest bg-blue text-white-400 shadow-lg">Most Popular</div>
-                )}
-                {!plan.recommended && plan.badge && (
-                  <div className="absolute top-0 right-0 px-5 py-1.5 rounded-bl-2xl text-[10px] font-bold uppercase tracking-widest bg-gradient-to-r from-yellow-500 to-yellow-600 text-white shadow-lg">{plan.badge}</div>
-                )}
-                <h3 className={`text-lg font-bold mb-2 ${plan.recommended ? 'text-white' : plan.id === 'basic' ? 'text-amber-600' : 'text-slate-400'}`}>{plan.name}</h3>
-                <div className="flex items-baseline gap-1 mb-8"><span className="text-5xl font-serif font-bold">{plan.price}</span><span className="text-sm opacity-70">{plan.priceSub}</span></div>
-                <ul className="space-y-4 mb-8">{plan.features.map((f, i) => (<li key={i} className={`flex items-start gap-3 text-sm ${plan.recommended ? 'text-white' : ''}`}><Check size={16} className={`${plan.recommended ? 'text-white' : 'text-amber-500'} mt-0.5`} />{f}</li>))}</ul>
-                <a href={TELEGRAM_LINK} className={`w-full block py-4 rounded-xl font-bold text-center transition-colors ${plan.recommended ? 'bg-white text-red-600 hover:bg-red-50 shadow-lg' : plan.id === 'basic' ? 'bg-gradient-to-r from-amber-400 to-orange-500 text-white hover:from-amber-500 hover:to-orange-600 shadow-md' : 'bg-slate-100 text-midnight-950 hover:bg-slate-200'}`}>{plan.buttonText}</a>
-              </div>
-            ))}
-         </div>
-      </section>
+     <section id="pricing" className="py-24 bg-white">
+  <div className="container mx-auto px-6 md:px-12 text-center mb-16">
+    <h2 className="text-3xl md:text-5xl font-serif font-bold text-midnight-950 mb-4">Premium Membership</h2>
+  </div>
+  <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
+    {t.pricing.plans.map((plan, idx) => (
+      <div 
+        key={idx} 
+        className={`relative rounded-[2rem] p-8 transition-all border overflow-hidden ${
+          plan.id === 'basic' 
+            ? 'bg-amber-50 border-amber-100 text-amber-900' // 30rs: Light Rich Tea (Latte)
+            : plan.id === 'pro' 
+            ? 'bg-gradient-to-br from-amber-800 to-amber-950 text-white shadow-2xl scale-105 border-amber-700' // 60rs: Dark Strong Tea
+            : 'bg-stone-50 border-stone-100 text-stone-600' // 0rs: Milky White/Cream
+        }`}
+      >
+        {/* Most Popular Badge (Commonly on 60rs Plan) */}
+        {plan.recommended && (
+          <div className="absolute top-0 right-0 px-5 py-1.5 rounded-bl-2xl text-[10px] font-bold uppercase tracking-widest bg-white text-amber-900 shadow-lg">
+            Most Popular
+          </div>
+        )}
+        
+        {/* Other Badges (Commonly on 30rs Plan) */}
+        {!plan.recommended && plan.badge && (
+          <div className={`absolute top-0 right-0 px-5 py-1.5 rounded-bl-2xl text-[10px] font-bold uppercase tracking-widest text-white shadow-lg ${
+             plan.id === 'basic' ? 'bg-amber-600' : 'bg-stone-400'
+          }`}>
+            {plan.badge}
+          </div>
+        )}
 
-      <footer className="bg-white border-t border-slate-200 py-16">
-         <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-10">
-            <div><div className="flex items-center gap-2 mb-4"><Logo className="w-8 h-8" /><span className="font-serif font-bold text-midnight-950 text-lg">GK Guruji</span></div><p className="text-slate-400 text-sm">{t.footer.desc}</p></div>
-            <div className="flex gap-8 text-sm font-medium text-slate-500"><button onClick={() => setLegalModal('privacy')} className="hover:text-gold-600 transition-colors">Privacy</button><button onClick={() => setLegalModal('terms')} className="hover:text-gold-600 transition-colors">Terms</button><a href={`mailto:${SUPPORT_EMAIL}`} className="hover:text-gold-600 transition-colors">Support</a></div>
-         </div>
-      </footer>
+        <h3 className={`text-lg font-bold mb-2 ${plan.recommended ? 'text-amber-100' : plan.id === 'basic' ? 'text-amber-700' : 'text-stone-400'}`}>
+          {plan.name}
+        </h3>
+        
+        <div className="flex items-baseline gap-1 mb-8">
+          <span className="text-5xl font-serif font-bold">{plan.price}</span>
+          <span className="text-sm opacity-70">{plan.priceSub}</span>
+        </div>
+        
+        <ul className="space-y-4 mb-8">
+          {plan.features.map((f, i) => (
+            <li key={i} className={`flex items-start gap-3 text-sm ${plan.recommended ? 'text-amber-50' : ''}`}>
+              <Check size={16} className={`${plan.recommended ? 'text-white' : 'text-amber-600'} mt-0.5`} />
+              {f}
+            </li>
+          ))}
+        </ul>
+        
+        <a 
+          href={TELEGRAM_LINK} 
+          className={`w-full block py-4 rounded-xl font-bold text-center transition-colors shadow-md ${
+            plan.recommended 
+              ? 'bg-white text-amber-900 hover:bg-amber-50' // 60rs: Button matches Badge (White)
+              : plan.id === 'basic' 
+              ? 'bg-amber-600 text-white hover:bg-amber-700' // 30rs: Button matches Badge (Amber Dark)
+              : 'bg-stone-200 text-stone-600 hover:bg-stone-300' // 0rs: Subtle Grey
+          }`}
+        >
+          {plan.buttonText}
+        </a>
+      </div>
+    ))}
+  </div>
+</section>
+
+<footer className="bg-white border-t border-slate-200 py-16">
+  <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center gap-10">
+    <div>
+        <div className="flex items-center gap-2 mb-4">
+            <Logo className="w-8 h-8" />
+            <span className="font-serif font-bold text-midnight-950 text-lg">GK Guruji</span>
+        </div>
+        <p className="text-slate-400 text-sm">{t.footer.desc}</p>
+    </div>
+    <div className="flex gap-8 text-sm font-medium text-slate-500">
+        <button onClick={() => setLegalModal('privacy')} className="hover:text-gold-600 transition-colors">Privacy</button>
+        <button onClick={() => setLegalModal('terms')} className="hover:text-gold-600 transition-colors">Terms</button>
+        <a href={`mailto:${SUPPORT_EMAIL}`} className="hover:text-gold-600 transition-colors">Support</a>
+    </div>
+  </div>
+</footer>
+
     </div>
   );
 }
